@@ -1,23 +1,42 @@
-class bluePuffball {
+  int numbluePuff = 2;
+  int numgreenPuff = 2;
+  int numpinkPuff = 2;
+  int numstarSnacks = 24;
+  
+  bluePuff[] bluePuff = new bluePuff[numbluePuff];
+  greenPuff[] greenPuff = new greenPuff[numgreenPuff];
+  pinkPuff[] pinkPuff = new pinkPuff[numpinkPuff];
+  starSnacks[] starSnacks = new starSnacks[numpinkPuff];
 
-boolean debug = true;
-PVector position, target;
-PImage puffballOne; 
 
-boolean isTouched = false;
-int touchedMarkTime = 0;
-int botheredTimeout = 1000;
-float botheredSpread = 5;
 
-float triggerDistance1 = 100;
-float triggerDistance2 = 8;
-float movementSpeed = 0.10;
+void setup() {
+  size(1200,800, P2D);
+  
+ for (int i=0; i<bluePuff.length; i++) {
+    bluePuff[i] = new bluePuff(random(width), random(height));
+  }
+  
+  for (int i=0; i<greenPuff.length; i++) {
+    greenPuff[i] = new greenPuff(random(width), random(height));
+  }
+  
+   for (int i=0; i<pinkPuff.length; i++) {
+    pinkPuff[i] = new pinkPuff(random(width), random(height));
+   }
+  for (int i=0; i<foods.length; i++) {
+    starSnacks[i] = new starSnacks(random(width), random(height));
+  }
+}
 
-bluePuffball(float x, float y){
-position = new PVector(x, y);
-pickEscapeTarget();
-
- face01 = loadImage("face01.png");
-    face01.resize(face01.width/3, face01.height/3);
-} 
+void draw() {
+  background(0);
+  
+  for (int i=0; i<starSnacks.length; i++) {
+    starSnacks[i].run();
+  }
+  
+  for (int i=0; i<bluePuff.length; i++) {
+    bluePuff[i].run();
+  }
 }
