@@ -1,4 +1,4 @@
-class starSnacks {
+class Snacks {
   
   PVector position;
   float sizeVal;
@@ -14,12 +14,12 @@ class starSnacks {
   
   void draw() {
     if (on) {
-      loadimage ("starPurple.png");
+      loadimage starSnackOne("starPurple.png");
       starSnackOne(position.x, position.y, sizeVal, sizeVal);
       loadimage ("starGreen.png");
-      starSnack2(position.x, position.y, sizeVal, sizeVal);
+      starSnackTwo(position.x, position.y, sizeVal, sizeVal);
       loadimage ("starOrange.png");
-      starSnack3(position.x, position.y, sizeVal, sizeVal);
+      starSnackThree(position.x, position.y, sizeVal, sizeVal);
     }
   }
   

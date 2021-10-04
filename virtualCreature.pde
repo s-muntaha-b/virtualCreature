@@ -1,12 +1,12 @@
-  int numbluePuff = 2;
-  int numgreenPuff = 2;
-  int numpinkPuff = 2;
-  int numstarSnacks = 24;
+  int numBlue = 1;
+  int numGreen = 1;
+  int numPink= 1;
+  int numSnacks = 9;
   
-  bluePuff[] bluePuff = new bluePuff[numbluePuff];
-  greenPuff[] greenPuff = new greenPuff[numgreenPuff];
-  pinkPuff[] pinkPuff = new pinkPuff[numpinkPuff];
-  starSnacks[] starSnacks = new starSnacks[numpinkPuff];
+  Blue[] bluePuff = new Blue[numBlue];
+  Green[] greenPuff = new Green[numGreen];
+  Pink[] pinkPuff = new Pink[numPink];
+  Star[] starSnacks = new Star[numSnacks];
 
 
 

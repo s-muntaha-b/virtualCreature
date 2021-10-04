@@ -1,4 +1,4 @@
-class pinkPuff {
+class Pink {
   
   
   

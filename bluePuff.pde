@@ -1,4 +1,4 @@
-class bluePuff {
+class Blue {
   
   boolean debug = true;
   PVector position, target;
@@ -21,7 +21,6 @@ class bluePuff {
   float triggerDistance2 = 25;
   float movementSpeed = 0.08;
     
-  // This is the constructor; it needs to have the same name as the class.
   bluePuff(float x, float y) {
     position = new PVector(x, y);
     pickEscapeTarget();
