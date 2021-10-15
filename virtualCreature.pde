@@ -1,42 +1,25 @@
-  int numBlue = 1;
-  int numGreen = 1;
-  int numPink= 1;
-  int numSnacks = 9;
-  
-  Blue[] bluePuff = new Blue[numBlue];
-  Green[] greenPuff = new Green[numGreen];
-  Pink[] pinkPuff = new Pink[numPink];
-  Star[] starSnacks = new Star[numSnacks];
+PVector position, target;
+boolean moving = false ;
 
-
-
-void setup() {
-  size(1200,800, P2D);
+void setup () {
+  size(1000, 1000, P2D);
   
- for (int i=0; i<bluePuff.length; i++) {
-    bluePuff[i] = new bluePuff(random(width), random(height));
-  }
+   target = new PVector(random(width), random(height));
+  position = new PVector(width/2, height/2);
   
-  for (int i=0; i<greenPuff.length; i++) {
-    greenPuff[i] = new greenPuff(random(width), random(height));
-  }
-  
-   for (int i=0; i<pinkPuff.length; i++) {
-    pinkPuff[i] = new pinkPuff(random(width), random(height));
-   }
-  for (int i=0; i<foods.length; i++) {
-    starSnacks[i] = new starSnacks(random(width), random(height));
-  }
+  ellipseMode(CORNER);
 }
 
-void draw() {
-  background(0);
-  
-  for (int i=0; i<starSnacks.length; i++) {
-    starSnacks[i].run();
+void draw () {
+  background(200);
+  PVector mouse = new PVector(mouseX, mouseY);
+  moving = position.dist(mouse) < 200;
+ 
+  if (moving) {
+    position = position.lerp(target, 0.05);
+      if (position.dist(target) < 12){
+    target = new PVector(random(width), random(height));
   }
-  
-  for (int i=0; i<bluePuff.length; i++) {
-    bluePuff[i].run();
   }
+  ellipse(position.x, position.y, 20, 20);
 }
