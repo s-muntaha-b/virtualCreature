@@ -1,6 +1,6 @@
 PVector target, position;
 boolean moving = false ;
-PImage bluePuff;
+PImage blueCurrent, puffBlue, buggedBlue;
 PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
 
 void setup () {
@@ -10,22 +10,30 @@ target = new PVector(random(width), random(height));
 position = new PVector(width/2, height/2);
 space = loadImage("pinkSpace.jpg");
 space.resize(1200,800);
-bluePuff = loadImage ("blueOpen.png");
-bluePuff.resize(bluePuff.width/4, bluePuff.height/4);
-  
+puffBlue = loadImage ("blueOpen.png");
+puffBlue.resize(puffBlue.width/4, puffBlue.height/4);
+buggedBlue = loadImage("blueClosed.png");
+buggedBlue.resize(puffBlue.width/4, puffBlue.height/4);
+
+blueCurrent = puffBlue;
+
 imageMode(CENTER);
 }
 
 void draw () {
   background(space);
   PVector mouse = new PVector(mouseX, mouseY);
-  moving = position.dist(mouse) < 200;
+  moving = position.dist(mouse) < 75;
  
   if (moving) {
+    blueCurrent = buggedBlue;
     position = position.lerp(target, 0.05);
       if (position.dist(target) < 12){
     target = new PVector(random(width), random(height));
   }
-  }
-  image(bluePuff, position.x, position.y);
+  } else {
+    blueCurrent = puffBlue;
+  
+}
+  image(blueCurrent, position.x, position.y);
 }
