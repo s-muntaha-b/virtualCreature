@@ -1,8 +1,10 @@
 PVector target, position;
-boolean moving = false ;
+boolean bugged = false ;
 PImage blueCurrent, puffBlue, buggedBlue;
 PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
 int time = 0;
+int timeout = 600;
+int distance = 75;
 void setup () {
   size(1200, 800, P2D);
   
@@ -12,7 +14,7 @@ position = new PVector(width/2, height/2);
 space = loadImage("pinkSpace.jpg");
 space.resize(1200,800);
 puffBlue = loadImage ("blueOpen.png");
-puffBlue.resize(puffBlue.width/4, puffBlue.height/4);
+puffBlue.resize(puffBlue.width/3, puffBlue.height/3);
 buggedBlue = loadImage("blueClosed.png");
 buggedBlue.resize(puffBlue.width, puffBlue.height);
 
@@ -25,16 +27,16 @@ imageMode(CENTER);
 void draw () {
   background(space);
   PVector mouse = new PVector(mouseX, mouseY);
-  moving = position.dist(mouse) < 75;
+  bugged = position.dist(mouse) < distance;
  
-  if (moving) {
+  if (bugged) {
     time = millis();
     blueCurrent = buggedBlue;
     position = position.lerp(target, 0.05);
       if (position.dist(target) < 12){
     target = new PVector(random(width), random(height));
    }
-  } else {
+  } else if (!bugged && millis() > time + timeout) {
     blueCurrent = puffBlue;
   
 }
