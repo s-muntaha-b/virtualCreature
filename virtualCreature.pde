@@ -1,17 +1,23 @@
-PVector position, target;
+PVector target, position;
 boolean moving = false ;
+PImage bluePuff;
+PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
 
 void setup () {
-  size(1000, 1000, P2D);
+  size(1200, 800, P2D);
   
-   target = new PVector(random(width), random(height));
-  position = new PVector(width/2, height/2);
+target = new PVector(random(width), random(height));
+position = new PVector(width/2, height/2);
+space = loadImage("pinkSpace.jpg");
+space.resize(1200,800);
+bluePuff = loadImage ("blueOpen.png");
+bluePuff.resize(bluePuff.width/4, bluePuff.height/4);
   
-  ellipseMode(CORNER);
+imageMode(CENTER);
 }
 
 void draw () {
-  background(200);
+  background(space);
   PVector mouse = new PVector(mouseX, mouseY);
   moving = position.dist(mouse) < 200;
  
@@ -21,5 +27,5 @@ void draw () {
     target = new PVector(random(width), random(height));
   }
   }
-  ellipse(position.x, position.y, 20, 20);
+  image(bluePuff, position.x, position.y);
 }
