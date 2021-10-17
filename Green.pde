@@ -1,5 +1,8 @@
 class Green {
   
+  Green() {
+    
+  }
   
   
   

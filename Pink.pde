@@ -1,6 +1,9 @@
 class Pink {
   
-  
+  Pink() {
+    
+    
+  }
   
   
   
