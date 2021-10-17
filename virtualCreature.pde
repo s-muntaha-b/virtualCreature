@@ -2,7 +2,6 @@ int numBlues = 3;
 int numGreens = 3;
 int numPinks = 3;
 
-
 Blue[] blues = new Blue[numBlues];
 Green[] greens = new Green[numGreens];
 Pink[] pinks = new Pink[numPinks];

@@ -30,12 +30,13 @@ class Blue {
   blueCurrent = puffBlue;
 
   imageMode(CENTER);
+  
   }
 
  void draw () {
     PVector mouse = new PVector(mouseX, mouseY);
     bugged = position.dist(mouse) < distanceOne;
- 
+        
   if (bugged) { //The bothered expression
     time = millis();
     blueCurrent = buggedBlue;
