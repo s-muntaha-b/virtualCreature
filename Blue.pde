@@ -7,9 +7,9 @@ class Blue {
   int timeout = 600;
   
   boolean blinking = false;
-  int blinkMarkTime = 0;
-  int blinkTimeout = 4000;
-  int blinkDuration = 250;
+  int blinkTime = 0;
+  int blinkTimeout = 4500;
+  int blinkDuration = 200;
   
  
   float distanceOne = 75;
@@ -44,20 +44,18 @@ class Blue {
     target = new PVector(random(width), random(height));
    }
   } else if (!bugged && millis() > time + timeout) {
-    if (millis() % 10 == 0) {
+if (!blinking && millis() > blinkTime + blinkTimeout) {
       blinking = true;
-    }
-    
-    if(blinking && millis() % 10 == 0) {
+      blinkTime = millis();
+    } else if (blinking && millis() > blinkTime + blinkDuration) {
       blinking = false;
     }
-    
-    if (blinking){
+
+    if (blinking) {
       blueCurrent = blinkBlue; 
-     }
-     else {
-     blueCurrent = puffBlue;
-  }
+    } else {
+      blueCurrent = puffBlue; // happy expression
+    }    
     
   
 }

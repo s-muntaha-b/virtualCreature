@@ -5,6 +5,13 @@ class Pink {
   PImage pinkCurrent, puffPink, buggedPink;
   int time = 0;
   int timeout = 600;
+  
+  boolean blinking = false;
+  int blinkTime = 0;
+  int blinkTimeout = 4000;
+  int blinkDuration = 200;
+  
+  
   float distanceOne = 75;
   float distanceTwo = 12;
   float moveSpeed = 0.05;

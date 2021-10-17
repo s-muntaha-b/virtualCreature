@@ -2,10 +2,16 @@ class Green {
   
   PVector target, position;
   boolean bugged = false ;
-  PImage greenCurrent, puffGreen, buggedGreen;
+  PImage greenCurrent, puffGreen, buggedGreen, blinkGreen;
   PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
   int time = 0;
   int timeout = 600;
+ 
+  boolean blinking = false;
+  int blinkTime = 0;
+  int blinkTimeout = 3000;
+  int blinkDuration = 200;
+  
   float distanceOne = 75;
   float distanceTwo = 12;
   float moveSpeed = 0.05;
@@ -19,7 +25,8 @@ class Green {
   puffGreen.resize(puffGreen.width/3, puffGreen.height/3); //For resizing creature
   buggedGreen = loadImage("greenClosed.png");
   buggedGreen.resize(puffGreen.width, puffGreen.height);
-
+  blinkGreen = loadImage("greenBlink.png");
+  blinkGreen.resize(puffGreen.width, puffGreen.height);
 
   greenCurrent = puffGreen;
 
@@ -38,8 +45,19 @@ class Green {
     target = new PVector(random(width), random(height));
    }
   } else if (!bugged && millis() > time + timeout) {
-    greenCurrent = puffGreen;
-  
+if (!blinking && millis() > blinkTime + blinkTimeout) {
+      blinking = true;
+      blinkTime = millis();
+    } else if (blinking && millis() > blinkTime + blinkDuration) {
+      blinking = false;
+    }
+
+    if (blinking) {
+      greenCurrent = blinkGreen; 
+    } else {
+      greenCurrent = puffGreen; // happy expression
+    }    
+      
 }
   image(greenCurrent, position.x, position.y);
     
