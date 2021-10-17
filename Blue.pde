@@ -10,7 +10,7 @@ class Blue {
   float distanceTwo = 12;
   float moveSpeed = 0.05;
   
-    Blue() {
+ Blue() {
   target = new PVector(random(width), random(height));
   position = new PVector(width/2, height/2);
 
@@ -19,7 +19,7 @@ class Blue {
   puffBlue = loadImage ("blueOpen.png");
   puffBlue.resize(puffBlue.width/3, puffBlue.height/3); //For resizing creature
   buggedBlue = loadImage("blueClosed.png");
-   buggedBlue.resize(puffBlue.width, puffBlue.height);
+  buggedBlue.resize(puffBlue.width, puffBlue.height);
 
 
   blueCurrent = puffBlue;
