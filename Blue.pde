@@ -6,7 +6,7 @@ class Blue {
   int time = 0;
   int timeout = 600;
   
-  boolean isBlinking = false;
+  boolean blinking = false;
   int blinkMarkTime = 0;
   int blinkTimeout = 4000;
   int blinkDuration = 250;
@@ -27,8 +27,6 @@ class Blue {
   blinkBlue = loadImage("blueBlink.png");
   blinkBlue.resize(puffBlue.width, puffBlue.height);
 
-
-
   blueCurrent = puffBlue;
 
   imageMode(CENTER);
@@ -46,7 +44,20 @@ class Blue {
     target = new PVector(random(width), random(height));
    }
   } else if (!bugged && millis() > time + timeout) {
-    blueCurrent = puffBlue;
+    if (millis() % 10 == 0) {
+      blinking = true;
+    }
+    
+    if(blinking && millis() % 10 == 0) {
+      blinking = false;
+    }
+    
+    if (blinking){
+      blueCurrent = blinkBlue; 
+     }
+     else {
+     blueCurrent = puffBlue;
+  }
     
   
 }
