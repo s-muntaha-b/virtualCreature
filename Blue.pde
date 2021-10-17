@@ -3,7 +3,6 @@ class Blue {
   PVector target, position;
   boolean bugged = false ;
   PImage blueCurrent, puffBlue, buggedBlue;
-  PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
   int time = 0;
   int timeout = 600;
   float distanceOne = 75;
@@ -14,8 +13,6 @@ class Blue {
   target = new PVector(random(width), random(height));
   position = new PVector(width/2, height/2);
 
-  space = loadImage("pinkSpace.jpg"); //Background
-  space.resize(1200,800);
   puffBlue = loadImage ("blueOpen.png");
   puffBlue.resize(puffBlue.width/3, puffBlue.height/3); //For resizing creature
   buggedBlue = loadImage("blueClosed.png");
