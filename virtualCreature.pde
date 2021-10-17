@@ -1,6 +1,11 @@
-Blue[] blues = new Blue[3];
-Green[] greens = new Green[3];
-Pink[] pinks = new Pink[3];
+int numBlues = 3;
+int numGreens = 3;
+int numPinks = 3;
+
+
+Blue[] blues = new Blue[numBlues];
+Green[] greens = new Green[numGreens];
+Pink[] pinks = new Pink[numPinks];
 
 
 PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
@@ -35,4 +40,5 @@ void draw() {
   for(int i=0; i<pinks.length; i++){ 
    pinks[i].draw();
  }
+
 }
