@@ -59,10 +59,6 @@ if (!blinking && millis() > blinkTime + blinkTimeout) {
       
 }
   image(greenCurrent, position.x, position.y);
-    
- 
-  
-  
   
   } 
 }
