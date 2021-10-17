@@ -3,7 +3,6 @@ class Green {
   PVector target, position;
   boolean bugged = false ;
   PImage greenCurrent, puffGreen, buggedGreen, blinkGreen;
-  PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
   int time = 0;
   int timeout = 600;
  
@@ -55,7 +54,7 @@ if (!blinking && millis() > blinkTime + blinkTimeout) {
     if (blinking) {
       greenCurrent = blinkGreen; 
     } else {
-      greenCurrent = puffGreen; // happy expression
+      greenCurrent = puffGreen; // 
     }    
       
 }

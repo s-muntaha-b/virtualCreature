@@ -2,7 +2,7 @@ class Pink {
   
   PVector target, position;
   boolean bugged = false ;
-  PImage pinkCurrent, puffPink, buggedPink;
+  PImage pinkCurrent, puffPink, buggedPink, blinkPink;
   int time = 0;
   int timeout = 600;
   
@@ -17,13 +17,15 @@ class Pink {
   float moveSpeed = 0.05;
   
   Pink() {
-     target = new PVector(random(width), random(height));
+  target = new PVector(random(width), random(height));
   position = new PVector(width/2, height/2);
 
   puffPink = loadImage ("pinkOpen.png");
-  puffPink.resize(puffPink.width/3, puffPink.height/3); //For resizing creature
+  puffPink.resize(puffPink.width/3, puffPink.height/3); //For resizing puffballs
   buggedPink = loadImage("pinkClosed.png");
   buggedPink.resize(puffPink.width, puffPink.height);
+  blinkPink = loadImage("pinkBlink.png");
+  blinkPink.resize(puffPink.width, puffPink.height);
 
 
   pinkCurrent = puffPink;
@@ -43,8 +45,19 @@ class Pink {
     target = new PVector(random(width), random(height));
    }
   } else if (!bugged && millis() > time + timeout) {
-    pinkCurrent = puffPink;
-  
+     if (!blinking && millis() > blinkTime + blinkTimeout) {
+      blinking = true;
+      blinkTime = millis();
+    } else if (blinking && millis() > blinkTime + blinkDuration) {
+      blinking = false;
+    }
+
+    if (blinking) {
+      pinkCurrent = blinkPink; 
+    } else {
+      pinkCurrent = puffPink;
+    }    
+        
 }
   image(pinkCurrent, position.x, position.y);
 }
