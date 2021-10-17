@@ -1,16 +1,22 @@
-Blue blue;
-Green green;
-Pink pink;
+Blue[] blues = new Blue[3];
+Green[] greens = new Green[3];
+Pink[] pinks = new Pink[3];
 
 PImage space; //Free to use image downloaded from https://www.pxfuel.com/en/free-photo-jrgja
 
 void setup () {
   size(1200, 800, P2D);
   
-  blue = new Blue();
-  green = new Green();
-  pink = new Pink();
-  
+  for(int i=0; i<blues.length; i++){ 
+  blues[i] = new Blue();
+ }
+ for(int i=0; i<greens.length; i++){ 
+  greens[i] = new Green();
+ }
+ for(int i=0; i<pinks.length; i++){ 
+  pinks[i] = new Pink();
+ }
+ 
 space = loadImage("pinkSpace.jpg"); //Background
 space.resize(1200,800);
   
@@ -19,7 +25,13 @@ space.resize(1200,800);
 void draw() {
    background(space);
    
-   blue.draw();
-   green.draw();
-   pink.draw();
+ for(int i=0; i<blues.length; i++){ 
+   blues[i].draw();
+ }
+ for(int i=0; i<greens.length; i++){ 
+   greens[i].draw();
+ }
+  for(int i=0; i<pinks.length; i++){ 
+   pinks[i].draw();
+ }
 }
