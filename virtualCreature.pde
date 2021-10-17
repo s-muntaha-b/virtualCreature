@@ -8,13 +8,13 @@ void setup () {
   size(1200, 800, P2D);
   
   for(int i=0; i<blues.length; i++){ 
-  blues[i] = new Blue();
+  blues[i] = new Blue(random(width), random(height));
  }
  for(int i=0; i<greens.length; i++){ 
-  greens[i] = new Green();
+  greens[i] = new Green(random(width), random(height));
  }
  for(int i=0; i<pinks.length; i++){ 
-  pinks[i] = new Pink();
+  pinks[i] = new Pink(random(width), random(height));
  }
  
 space = loadImage("pinkSpace.jpg"); //Background

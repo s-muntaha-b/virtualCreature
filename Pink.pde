@@ -16,9 +16,9 @@ class Pink {
   float distanceTwo = 12;
   float moveSpeed = 0.05;
   
-  Pink() {
+  Pink(float x, float y) {
   target = new PVector(random(width), random(height));
-  position = new PVector(width/2, height/2);
+  position = new PVector(x,y);
 
   puffPink = loadImage ("pinkOpen.png");
   puffPink.resize(puffPink.width/3, puffPink.height/3); //For resizing puffballs

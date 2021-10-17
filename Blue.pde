@@ -16,9 +16,9 @@ class Blue {
   float distanceTwo = 12;
   float moveSpeed = 0.05;
   
- Blue() {
+ Blue(float x, float y) {
   target = new PVector(random(width), random(height));
-  position = new PVector(width/2, height/2);
+  position = new PVector(x,y);
 
   puffBlue = loadImage ("blueOpen.png");
   puffBlue.resize(puffBlue.width/3, puffBlue.height/3); //For resizing creature

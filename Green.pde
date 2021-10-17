@@ -16,9 +16,9 @@ class Green {
   float moveSpeed = 0.05;
   
   
-  Green() {
+  Green(float x, float y) {
   target = new PVector(random(width), random(height));
-  position = new PVector(width/2, height/2);
+  position = new PVector(x,y);
 
   puffGreen = loadImage ("greenOpen.png");
   puffGreen.resize(puffGreen.width/3, puffGreen.height/3); //For resizing creature
