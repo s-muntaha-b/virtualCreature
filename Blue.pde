@@ -2,9 +2,16 @@ class Blue {
   
   PVector target, position;
   boolean bugged = false ;
-  PImage blueCurrent, puffBlue, buggedBlue;
+  PImage blueCurrent, puffBlue, buggedBlue, blinkBlue;
   int time = 0;
   int timeout = 600;
+  
+  boolean isBlinking = false;
+  int blinkMarkTime = 0;
+  int blinkTimeout = 4000;
+  int blinkDuration = 250;
+  
+ 
   float distanceOne = 75;
   float distanceTwo = 12;
   float moveSpeed = 0.05;
@@ -17,6 +24,9 @@ class Blue {
   puffBlue.resize(puffBlue.width/3, puffBlue.height/3); //For resizing creature
   buggedBlue = loadImage("blueClosed.png");
   buggedBlue.resize(puffBlue.width, puffBlue.height);
+  blinkBlue = loadImage("blueBlink.png");
+  blinkBlue.resize(puffBlue.width, puffBlue.height);
+
 
 
   blueCurrent = puffBlue;
@@ -37,6 +47,7 @@ class Blue {
    }
   } else if (!bugged && millis() > time + timeout) {
     blueCurrent = puffBlue;
+    
   
 }
   image(blueCurrent, position.x, position.y);
