@@ -1,1 +1,2 @@
 # virtualCreature
+For this project, I decided to create cute alien creatues in space. They were inspired by soot creatures from the movie Spirited Away, with their cute fluffy bodies and big eyes. The perspective of the program is that you, the player, have stumbled across these aliens, and when you go near them, they get shy and move away. They do not have mouths, but show expression through their eyes. 
