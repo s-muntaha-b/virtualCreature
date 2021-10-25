@@ -1,1 +1,2 @@
 # virtualCreature
+For this project, I decided to create a species of aliens, called Puffballs. They were inspired by the soot creatures from the movie Spirited Away, with their cute fluffy bodies and big eyes, as well as the space catterpillers from Voltron: Legendary Defender with their fun colours. The perspective of the program is that you, the player (with the mouse), have stumbled across these Puffballs in space, and when you go near them, they get shy and move away. 
