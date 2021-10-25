@@ -13,7 +13,7 @@ void setup () {
   size(1200, 800, P2D);
   
   for(int i=0; i<blues.length; i++){ 
-  blues[i] = new Blue(random(width), random(height));
+  blues[i] = new Blue(random(width), random(height)); // referenced from class repo, Creature03 
  }
  for(int i=0; i<greens.length; i++){ 
   greens[i] = new Green(random(width), random(height));
@@ -31,7 +31,7 @@ void draw() {
    background(space);
    
  for(int i=0; i<blues.length; i++){ 
-   blues[i].draw();
+   blues[i].draw(); //// referenced from class repo, Creature03 
  }
  for(int i=0; i<greens.length; i++){ 
    greens[i].draw();

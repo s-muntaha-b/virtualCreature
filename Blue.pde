@@ -13,7 +13,7 @@ class Blue {
   
   float distanceOne = 75;
   float distanceTwo = 12;
-  float moveSpeed = 0.05;
+  float moveSpeed = 0.05; // referenced from class repo, Steve 
   
   
   Blue(float x, float y) {
@@ -42,14 +42,14 @@ class Blue {
     blueCurrent = buggedBlue;
     position = position.lerp(target, moveSpeed);
       if (position.dist(target) < distanceTwo){
-    target = new PVector(random(width), random(height));
+    target = new PVector(random(width), random(height)); // referenced from class repo, Steve 
    }
   } else if (!bugged && millis() > time + timeout) {
 if (!blinking && millis() > blinkTime + blinkTimeout) {
       blinking = true;
       blinkTime = millis();
     } else if (blinking && millis() > blinkTime + blinkDuration) {
-      blinking = false;
+      blinking = false; //// referenced from class repo, Steve 
     }
 
     if (blinking) {
